@@ -32,7 +32,7 @@ const DataOriginForm = (props) => {
     if (citationType === 'Literature') {
         LitTextFields = (
             <div className='new-lit-fields'>
-                <div className='new-lit-field'>
+                <div className='publication-type'>
                     <label>Publication Type</label>
                     <select value={publicationType} onChange={handlePublicationType}>
                         <option value=''>Select an option</option>

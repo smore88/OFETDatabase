@@ -14,6 +14,8 @@ body {
     margin-bottom: 1rem;
     text-align: left;
     padding-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .new-lab-field label {
@@ -38,6 +40,8 @@ body {
     margin-bottom: 1rem;
     text-align: left;
     padding-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .new-lit-field label{
@@ -113,4 +117,24 @@ body {
 .next-button button.alternative:hover,
 .next-button button.alternative:active {
   background-color: #ddb3f8;
+}
+
+.publication-type {
+    background-color: #a892ee;
+    text-align: left;
+}
+  
+.publication-type label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.publication-type select {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 21rem;
+    max-width: 100%;
 }

@@ -44,13 +44,13 @@ body {
     align-items: center;
 }
 
-.new-lit-field label{
+.new-lit-field label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
 }
 
-.new-lit-field input{
+.new-lit-field input {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -58,6 +58,7 @@ body {
     width: 20rem;
     max-width: 100%;
 }
+  
   
 .add-origin-info-backdrop {
     background-color: #a892ee;

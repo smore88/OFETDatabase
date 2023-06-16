@@ -1,0 +1,146 @@
+.login-info-backdrop {
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    top: 50%;
+    left: 50%;
+}
+
+.basic-text-info {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 60%;
+    line-height: 0.8; /* Adjust the line-height value as needed */
+    margin-bottom: 2rem;
+}
+
+.select-login-method {
+    text-align: center; /* Align to center */
+}
+
+.user-admin-button {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.user-button button,
+.admin-button button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+    text-align: center; /* Adjusted to center the text */
+    width: 8rem; /* Adjust the width as needed */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.user-button button:hover,
+.user-button button:active,
+.admin-button button:hover,
+.admin-button button:active {
+  background-color: #510674;
+  border-color: #510674;
+}
+
+.user-button button.alternative
+.admin-button button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.user-button button.alternative:hover,
+.user-button button.alternative:active,
+.admin-button button.alternative:hover,
+.admin-button button.alternative:hover {
+  background-color: #ddb3f8;
+}
+
+.protected-fields {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.email-container,
+.password-container {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0; /* Adjust the margin value as needed */
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-button {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 1rem;
+}
+
+.login-button button {
+    font: inherit;
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+    text-align: center; /* Adjusted to center the text */
+    width: 6rem; /* Adjust the width as needed */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.login-button button:hover,
+.login-button button:active {
+  background-color: #510674;
+  border-color: #510674;
+}
+
+.login-button button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.login-button button.alternative:hover,
+.login-button button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+button.signup-button {
+    background-color: transparent;
+    border: none;
+    color: lightblue;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    text-decoration: underline;
+  }
+  
+  

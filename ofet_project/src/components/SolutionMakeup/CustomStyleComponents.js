@@ -45,6 +45,25 @@ export const HeaderContainer = styled('div')`
 `;
 
 export const CustomButton = styled(Button)`
-  color: black;
-  border: 1px solid black;
+    background-color:  #510674;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+
+    &:hover {
+    background-color: #a892ee; /* Update to the desired hover color */
+    }
+`;
+
+export const ButtonContainer = styled('div')`
+    margin-top: 31px;
+    margin-left: 10px;
+`;
+
+export const ParentContainer = styled('div')`
+    display: flex;
+    justify-content: center; /* Adjust as needed */
+    align-items: flex-start; /* Adjust as needed */
 `;

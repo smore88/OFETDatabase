@@ -2,23 +2,17 @@ import React, { useState } from 'react';
 import { Headers, 
     SolventTextFields, 
     InputFieldsContainer, 
-    HeaderContainer, 
-    CustomButton, 
-    SolventDropDowns} from './CustomStyleComponents.js'
+    HeaderContainer,  
+    SolventDropDowns} from '../CustomStyleComponents.js'
 
-import AddIcon from '@mui/icons-material/AddOutlined';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import Card from '../UI/Card.js'
 
 
-import './SolMakeSolvent.css';
 import { FormControl } from '@mui/material';
 
 
-const SolMakeSolvent = (props) => {
+const SinglePolymerCard = ({number}) => {
 
     // 1) Keep track of all the current cards and update the state of the card so initially there is going to just be 1 card.
     const [solventCardCount, setSolventCardCount] = useState(1);
@@ -34,19 +28,16 @@ const SolMakeSolvent = (props) => {
     //     const containerHeight = container.scrollHeight;
     //     container.style.height = `${containerHeight}px`;
     // };
-      
+    
+    // need to update the solvent id: 1,2,3,4.....
 
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            {Array.from({ length: solventCardCount }).map((_, index) => (
-                <div className='solvent-info-card'>
+                <div className='solvent-info-card' >
                     {/* below will be for the name and addIcon */}
                     <HeaderContainer>
-                        <Headers variant="subtitle1">Solvent {index + 1``}</Headers>
-                        <CustomButton>
-                            <AddIcon onClick={handleSolventCard}></AddIcon>
-                        </CustomButton>
+                        <Headers variant="subtitle1">Polymer {number}</Headers> 
                     </HeaderContainer>
 
                     {/* First 2 input boxes in row 0 */}
@@ -59,28 +50,27 @@ const SolMakeSolvent = (props) => {
                                 label="entity-type"
                                 // onChange={handleChange}
                             >
-                                <MenuItem value={"Solvent"}>Solvent</MenuItem>
+                                <MenuItem value={"polymer"}>Polymer</MenuItem>
                             </SolventDropDowns>
                         </FormControl>
                         
                         <FormControl>
-                            <InputLabel id="iupac-name-label">Iupac Name</InputLabel>
+                            <InputLabel label="common-name-label">Common Name</InputLabel>
                             <SolventDropDowns
-                                id="iupac-name-select"
+                                id="common-name-select"
                                 // value={age}
-                                label="iupac-name"
+                                // label="common-name"
                                 // onChange={handleChange}
                             >
-                                <MenuItem value={"chloroform"}>chloroform</MenuItem>
-                                <MenuItem value={"cholorbenzene"}>cholorbenzene</MenuItem>
-                                <MenuItem value={"1,2-dicholorobenzene"}>1,2-dicholorobenzene</MenuItem>
-                                <MenuItem value={"1,2,4-tricholorobenzene"}>1,2,4-tricholorobenzene</MenuItem>
-                                <MenuItem value={"toluene"}>toluene</MenuItem>
-                                <MenuItem value={"p-xylene"}>p-xylene</MenuItem>
-                                <MenuItem value={"methanol"}>methanol</MenuItem>
-                                <MenuItem value={"isopropanol"}>isopropanol</MenuItem>
-                                <MenuItem value={"acetone"}>acetone</MenuItem>
-
+                                <MenuItem value={"P3HT"}>P3HT</MenuItem>
+                                <MenuItem value={"DPP-DTT"}>DPP-DTT</MenuItem>
+                                <MenuItem value={"N2200"}>N2200</MenuItem>
+                                <MenuItem value={"PDPP4T"}>PDPP4T</MenuItem>
+                                <MenuItem value={"PBTTT"}>PBTTT</MenuItem>
+                                <MenuItem value={"PS"}>PS</MenuItem>
+                                <MenuItem value={"PDMS"}>PDMS</MenuItem>
+                                <MenuItem value={"PDMS"}>PDMS</MenuItem>
+                                <MenuItem value={"PC70BM"}>PC70BM</MenuItem>
                             </SolventDropDowns>
                         </FormControl>
                     </InputFieldsContainer>
@@ -88,21 +78,44 @@ const SolMakeSolvent = (props) => {
                     {/* First 2 input boxes in row 1 */}
                     <InputFieldsContainer>
                         <SolventTextFields
-                            id="pubchem_cid"
-                            label="Pubchem CID"
+                            id="iupac_name"
+                            label="Iupac Name"
                             variant="outlined">
                         </SolventTextFields>
                         
                         <SolventTextFields 
-                            id="vol_frac"
-                            label="Vol Frac" 
+                            id="mn_"
+                            label="mn (kDa)" 
+                            variant="outlined">
+                        </SolventTextFields>
+                    </InputFieldsContainer>
+
+                    {/* First 2 input boxes in row 2 */}
+                    <InputFieldsContainer>
+                        <SolventTextFields
+                            id="mw_"
+                            label="mw (kDa)" 
+                            variant="outlined">
+                        </SolventTextFields>
+                        
+                        <SolventTextFields 
+                            id="dispersity_"
+                            label="Dispersity" 
+                            variant="outlined">
+                        </SolventTextFields>
+                    </InputFieldsContainer>
+
+                    {/* First 2 input boxes in row 2 */}
+                    <InputFieldsContainer>
+                        <SolventTextFields
+                            id="mw_"
+                            label="mw (kDa)" 
                             variant="outlined">
                         </SolventTextFields>
                     </InputFieldsContainer>
                 </div>
-            ))}
         </div>
     );
 }
 
-export default SolMakeSolvent;
+export default SinglePolymerCard;

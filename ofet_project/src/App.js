@@ -1,12 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import DataOriginForm from './components/ExperimentalDataOriginScreen/DataOriginForm';
 import Login from './components/LoginRegisterScreen/Login';
-import SolMakeup from './components/SolutionMakeup/SolMakeup';
-// import Card from './components/UI/Card';
-import SolMakeSolvent from './components/SolutionMakeup/SolMakeSolvent';
-import AddSolventCard from './components/SolutionMakeup/AddSolventCard';
+import SolutionMakeUpScreen from './components/SolutionMakeup/SolutionMakeupScreen';
+
+import './App.css';
+
 
 function App() {
   return (
@@ -16,8 +15,7 @@ function App() {
           <Route path="/data-origin" element={<DataOriginForm></DataOriginForm>}></Route>
           <Route path="/sol-makeup" element={<SolMakeup></SolMakeup>}></Route> */}
         </Routes>
-        <SolMakeup></SolMakeup>
-        <SolMakeSolvent></SolMakeSolvent>
+        <SolutionMakeUpScreen></SolutionMakeUpScreen>
     </div>
   );
 };

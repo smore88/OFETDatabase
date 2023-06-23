@@ -5,14 +5,18 @@ import DataOriginForm from './components/ExperimentalDataOriginScreen/DataOrigin
 import Login from './components/LoginRegisterScreen/Login';
 import SolMakeup from './components/SolutionMakeup/SolMakeup';
 import Card from './components/UI/Card';
+import DevF from './components/DeviceFabrication/DevF';
+import SubPre from './components/SubstratePretreat/SubPre';
 
 function App() {
   return (
     <div>
+    <SubPre/>
+      { /* <DevF/>
         <Routes>
           <Route path="/" element={<Login></Login>}></Route>
           <Route path="/data-origin" element={<DataOriginForm></DataOriginForm>}></Route>
-        </Routes>
+  </Routes>*/}
         {/* <SolMakeup></SolMakeup> */}
     </div>
   );

@@ -2,7 +2,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 2;
     padding: 0;
 }
@@ -22,6 +21,7 @@ body {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
+    text-align: left;
 }
 
 .new-lab-field input {

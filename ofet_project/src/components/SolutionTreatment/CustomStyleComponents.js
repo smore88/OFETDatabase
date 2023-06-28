@@ -44,24 +44,6 @@ export const HeaderContainer = styled('div')`
     justify-content: space-between;
 `;
 
-export const CustomButton = styled(Button)`
-    background-color:  #510674;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
-
-    &:hover {
-    background-color: #a892ee; /* Update to the desired hover color */
-    }
-`;
-
-export const ButtonContainer = styled('div')`
-    margin-top: 31px;
-    margin-left: 10px;
-`;
-
 export const ParentContainer = styled('div')`
     display: flex;
     justify-content: center; /* Adjust as needed */
@@ -80,6 +62,70 @@ export const NextPageButton = styled(Button)`
     &:hover {
     background-color: #a892ee; /* Update to the desired hover color */
     }
+`;
 
-    margin-left: 305px;
+
+
+// NEW THINGS HERE 
+
+export const SolutionTreatmentBox = styled('div')`
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 300px;
+  height: 400px;
+  border: 7px solid #000000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px; /* Add rounded border radius */
+
+`;
+
+export const HeaderBox = styled('div')`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a892ee;
+    width: 300px;
+    height: 20%;
+    position: relative;
+
+    &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #000000;
+    }
+`;
+
+export const ButtonContainer = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  & > :not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const CustomButton = styled(Button)`
+  background-color: #510674;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background-color: #a892ee;
+  }
 `;

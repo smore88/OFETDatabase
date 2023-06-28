@@ -14,12 +14,19 @@ const AddPolymerCard = (props) => {
         setPolymerCardCount(prevPolymerCards => [...prevPolymerCards, {}]);
     }
 
+    // 3) we have a remove icon so everytime that icon is clicked remove the card
+    const handleRemoveCard = (index) => {
+        setPolymerCardCount((prevPolymerCards) =>
+            prevPolymerCards.filter((_, i) => i !== index)
+        );
+    }
+
     return (
         <ParentContainer>
             <div>
                 {polymerCardCount.map((_, index) => (
                     <div key={index}>
-                        <SinglePolymerCard number={index + 1}></SinglePolymerCard>
+                        <SinglePolymerCard number={index + 1} onRemove={() => handleRemoveCard(index)}></SinglePolymerCard>
                     </div>
                 ))}
             </div>

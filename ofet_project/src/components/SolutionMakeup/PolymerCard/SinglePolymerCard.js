@@ -11,8 +11,11 @@ import InputLabel from '@mui/material/InputLabel';
 
 import { FormControl } from '@mui/material';
 
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-const SinglePolymerCard = ({number}) => {
+
+
+const SinglePolymerCard = ({number, onRemove}) => {
 
     // 1) Keep track of all the current cards and update the state of the card so initially there is going to just be 1 card.
     const [solventCardCount, setSolventCardCount] = useState(1);
@@ -20,16 +23,7 @@ const SinglePolymerCard = ({number}) => {
     // 2) add to the cardCount each time this function is called
     const handleSolventCard = () => {
         setSolventCardCount(solventCardCount => solventCardCount + 1);
-        //updateContainerHeight();
     }
-
-    // const updateContainerHeight = () => {
-    //     const container = document.getElementById('solventContainer');
-    //     const containerHeight = container.scrollHeight;
-    //     container.style.height = `${containerHeight}px`;
-    // };
-    
-    // need to update the solvent id: 1,2,3,4.....
 
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
@@ -37,7 +31,8 @@ const SinglePolymerCard = ({number}) => {
                 <div className='solvent-info-card' >
                     {/* below will be for the name and addIcon */}
                     <HeaderContainer>
-                        <Headers variant="subtitle1">Polymer {number}</Headers> 
+                        <Headers variant="subtitle1">Polymer {number}</Headers>
+                        <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                     </HeaderContainer>
 
                     {/* First 2 input boxes in row 0 */}

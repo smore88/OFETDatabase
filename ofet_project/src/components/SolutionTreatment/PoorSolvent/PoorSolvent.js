@@ -16,11 +16,11 @@ import Select from '@mui/material/Select';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 
-import './SingleSolventCard.css';
+import './PoorSolventCard.css';
 import { FormControl } from '@mui/material';
 
 
-const SingleSolventCard = ({number, onRemove}) => {
+const PoorSolvent = ({number, onRemove}) => {
 
     // 1) Keep track of all the current cards and update the state of the card so initially there is going to just be 1 card.
     const [solventCardCount, setSolventCardCount] = useState(1);
@@ -30,14 +30,6 @@ const SingleSolventCard = ({number, onRemove}) => {
         setSolventCardCount(solventCardCount => solventCardCount + 1);
         //updateContainerHeight();
     }
-
-    // const updateContainerHeight = () => {
-    //     const container = document.getElementById('solventContainer');
-    //     const containerHeight = container.scrollHeight;
-    //     container.style.height = `${containerHeight}px`;
-    // };
-    
-    // need to update the solvent id: 1,2,3,4.....
 
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
@@ -104,4 +96,4 @@ const SingleSolventCard = ({number, onRemove}) => {
     );
 }
 
-export default SingleSolventCard;
+export default PoorSolvent;

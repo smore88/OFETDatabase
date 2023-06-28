@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './DataOriginForm.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const DataOriginForm = (props) => {
 
@@ -115,12 +117,20 @@ const DataOriginForm = (props) => {
         );
     }
 
+    const navigateTo = useNavigate();
+    const handleNext = () => {
+        // Perform logic
+        // ...
+        // Navigate to the solution makeup page
+        navigateTo('/sol-makeup');
+    };
+
     //Adding the 'Next' Button upon the 'Laboratory' or the 'Literature' menu drop down click
     let addButton = null;
     if(citationType === 'Literature' || citationType === 'Laboratory') {
         addButton = (
             <div className='next-button'>
-              <button type='submit'>Next</button>
+              <button type='submit' onClick={handleNext}>Next</button>
             </div>
         );
     }

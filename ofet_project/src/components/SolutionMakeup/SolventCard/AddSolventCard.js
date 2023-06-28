@@ -14,12 +14,19 @@ const AddSolventCard = (props) => {
         setSolventCardCount(prevSolventCards => [...prevSolventCards, {}]);
     }
 
+    // 3) we have a remove icon so everytime that icon is clicked remove the card
+    const handleRemoveCard = (index) => {
+        setSolventCardCount((prevSolventCards) =>
+            prevSolventCards.filter((_, i) => i !== index)
+        );
+    }
+
     return (
         <ParentContainer>
             <div>
                 {solventCardCount.map((_, index) => (
                     <div key={index}>
-                        <SingleSolventCard number={index + 1}></SingleSolventCard>
+                        <SingleSolventCard number={index + 1} onRemove={() => handleRemoveCard(index)}></SingleSolventCard>
                     </div>
                 ))}
             </div>

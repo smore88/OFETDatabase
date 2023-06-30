@@ -4,7 +4,7 @@ import { Headers,
     SolventTextFields, 
     InputFieldsContainer, 
     HeaderContainer,  
-    SolventDropDowns} from '../CustomStyleComponents.js'
+    SolventDropDowns} from '../SolutionMakeupStyleComponents.js'
 
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
@@ -22,27 +22,8 @@ const SolutionInformation = (props) => {
     };
 
     return (
-        // this will be for entering the solution information
-        // <div className='solution-info-card'>
-        //     <div className='solution-info'>
-        //         <label className='solLabel'>Enter Solution Information</label>
-        //         <div className='input1'>
-        //             <div className="entity-type-container">
-        //                 <label>Entity Type:</label>
-        //                 <select value={entityType} onChange={handleEntityType}>
-        //                     <option value=''></option>
-        //                         <option value='Solution'>Solution</option>
-        //                 </select>
-        //             </div>
-        //             <div className="concentation-container">
-        //                 <label>Concentration:</label>
-        //                 <input type="text" />
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div> 
         <div>
-            <div className='solvent-info-card' >
+            <div className='solvent-info-card'>
                 <HeaderContainer>
                     <Headers variant="subtitle1">Enter Solution Information</Headers> 
                 </HeaderContainer>

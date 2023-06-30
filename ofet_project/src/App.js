@@ -18,6 +18,7 @@ function App() {
         </Routes>
         {/* <Login></Login> */}
         {/* <DataOriginForm></DataOriginForm> */}
+        {/* <SolutionMakeUpScreen></SolutionMakeUpScreen> */}
         {/* <SolutionTreatment></SolutionTreatment> */}
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CustomButton, ButtonContainer, SolutionTreatmentBox, HeaderBox } from '../CustomStyleComponents';
+import { CustomButton, ButtonContainer, SolutionTreatmentBox, HeaderBox } from '../SolutionTreatmentStyleComponents';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import Typography from '@mui/material/Typography';
 

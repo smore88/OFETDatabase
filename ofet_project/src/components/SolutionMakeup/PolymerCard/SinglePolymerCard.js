@@ -3,7 +3,7 @@ import { Headers,
     SolventTextFields, 
     InputFieldsContainer, 
     HeaderContainer,  
-    SolventDropDowns} from '../CustomStyleComponents.js'
+    SolventDropDowns} from '../SolutionMakeupStyleComponents.js'
 
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';

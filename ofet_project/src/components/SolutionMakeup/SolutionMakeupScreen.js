@@ -3,7 +3,7 @@ import SolutionInformation from './SolutionInformation/SolutionInformation';
 import AddSolventCard from './SolventCard/AddSolventCard';
 import AddPolymerCard from './PolymerCard/AddPolymerCard';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton } from './CustomStyleComponents';
+import { NextPageButton } from './SolutionMakeupStyleComponents';
 import NavBar from '../GenericUI/NavBar';
 
 

@@ -1,156 +1,76 @@
 import React, { useState } from 'react';
 import './DataOriginForm.css';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../GenericUI/NavBar';
+import CitationType from './CitationType/CitationTypeCard';
 
+import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
+import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+import { Container, NextPageButton, HelpContainer } from './DataOriginStyleComponents';
 
-const DataOriginForm = (props) => {
+const DataOriginForm = () => {
 
-    /*
-    * We create a state variable called 'citationType' using the useState hook
-    * When a value is selected from the dropdown menu, the handleCitation function is called to update the 'citationType' with the new value
-    * Then based on the citationType different text fields are emerged and the box dynamically shifts
-    */
+    // Need to be able to render a help icon button that has the details for some of the more confusing stuff
 
-    const [citationType, setCitationType] = useState('');
+    const [isAlertOpen, setAlert] = useState(false);
 
-    const handleCitation = (event) => {
-        setCitationType(event.target.value);
+    const handleHelpClick = () => {
+        setAlert(true);
     };
 
-    /*
-    * I am creating a state variable called 'publicationType' using the useState hook
-    * When a value is selected from the dropdown menu, the handlePublicationType function is called to update the 'publicationType' with the new
-    * value.
-    */
-
-    const [publicationType, setPublicationType] = useState('')
-
-    const handlePublicationType = (event) => {
-        setPublicationType(event.target.value);
-    }; 
-    
-    // Changing the values for the literature menu
-    let LitTextFields = null;
-    if (citationType === 'Literature') {
-        LitTextFields = (
-            <div className='new-lit-fields'>
-                <div className='publication-type'>
-                    <label>Publication Type</label>
-                    <select value={publicationType} onChange={handlePublicationType}>
-                        <option value=''>Select an option</option>
-                        <option value='Literature'>Journal Article</option>
-                        <option value='Laboratory'>Dissertation</option>
-                        <option value='Laboratory'>Book</option>
-                    </select>
-                </div>
-                <div className='new-lit-field'>
-                    <label>Journal</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Title</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Enter Authors</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Enter Keywords</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Publication Year</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Volume</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Issue</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Url</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Language</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Location</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lit-field'>
-                    <label>Date Of Citation</label>
-                    <input type='text' />
-                </div>
-            </div>
-        );
+    const handleCloseAlert = () => {
+        setAlert(false);
     }
 
-    // Changing the values for the laboratory menu
-    let LabTextFields = null;
-    const todaysDate = new Date().toISOString().split('T')[0];
-    if (citationType === 'Laboratory') {
-        LabTextFields = (
-            <div className='new-lab-fields'>
-                <div className='new-lab-field'>
-                    <label>Sample Date</label>
-                    <input
-                        type='date' 
-                        min='1970-01-01' 
-                        max={todaysDate}>
-                    </input>
-                </div>
-                <div className='new-lab-field'>
-                    <label>Lab Notebook ID</label>
-                    <input type='text' />
-                </div>
-                <div className='new-lab-field'>
-                    <label>Lab Sample ID</label>
-                    <input type='text' />
-                </div>
-            </div>
-        );
-    }
-
-    const navigateTo = useNavigate();
-    const handleNext = () => {
-        // Perform logic
-        // ...
-        // Navigate to the solution makeup page
-        navigateTo('/sol-makeup');
-    };
-
-    //Adding the 'Next' Button upon the 'Laboratory' or the 'Literature' menu drop down click
-    let addButton = null;
-    if(citationType === 'Literature' || citationType === 'Laboratory') {
-        addButton = (
-            <div className='next-button'>
-              <button type='submit' onClick={handleNext}>Next</button>
-            </div>
-        );
-    }
+    const renderHelpButton = () => (
+        <>
+            <IconButton onClick={handleHelpClick}>
+                <HelpContainer>
+                    <QuestionMarkOutlinedIcon style={{ color: 'black', fontSize: '30px' }} />
+                </HelpContainer>
+            </IconButton>
+            <Dialog open={isAlertOpen} onClose={handleCloseAlert}>
+                <DialogTitle>
+                    <Typography variant="h6" style={{ fontWeight: 'bold' }}>Need Some Help?</Typography>
+                </DialogTitle>
+                <DialogContent>
+                    <Typography variant="body1">Here are some tips for filling out the Laboratory Section?</Typography>
+                    <ul>
+                        <li>
+                        <Typography variant="body1">Tip 1: Date field is in mm/dd/yyyy</Typography>
+                        </li>
+                        <li>
+                        <Typography variant="body1">Tip 2: Lab Notebook ID field enter in the Lab notebook number and page: ex.) RV_1.99</Typography>
+                        </li>
+                        <li>
+                        <Typography variant="body1">Tip 3: Lab Sample ID field enter in the sample identifier in the lab notebook: ex.) M317_5gL</Typography>
+                        </li>
+                    </ul>
+                </DialogContent>
+                <DialogContent>
+                    <Typography variant="body1">Here are some tips for filling out the Literature Section?</Typography>
+                    <ul>
+                        <li>
+                        <Typography variant="body1">Tip 1: Publisher field will be the university name if it is a dissertation</Typography>
+                        </li>
+                        <li>
+                        <Typography variant="body1">Tip 2: Location field will be the main author's major affiliation</Typography>
+                        </li>
+                        <li>
+                        <Typography variant="body1">Tip 3: Citation Date is in mm/dd/yyyy</Typography>
+                        </li>
+                    </ul>
+                </DialogContent>
+            </Dialog>
+        </>
+    );
 
     return (
-        <form>
-            <div className='add-origin-info-backdrop'>
-                <div className='citation-type'>
-                    <label>Citation Type</label>
-                    <select value={citationType} onChange={handleCitation}>
-                        <option value=''>Select an option</option>
-                        <option value='Literature'>Literature</option>
-                        <option value='Laboratory'>Laboratory</option>
-                    </select>
-                </div>
-                {LitTextFields}
-                {LabTextFields}
-                {addButton}
-            </div>
-        </form>
+        <div>
+            <NavBar title="Experimental Data Origin"></NavBar>
+            {renderHelpButton()}
+            <CitationType></CitationType>
+        </div>
     );
 };
 

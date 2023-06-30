@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../GenericUI/NavBar';
 import { Button, ButtonGroup, TextField } from '@mui/material';
-import { ButtonContainer, CustomButton, ProtectedFieldsContainer, CustomUIField, PasswordFieldContainer, ToggleButton, LoginPageButton } from './CustomStyleComponents';
+import { ButtonContainer, CustomButton, ProtectedFieldsContainer, CustomUIField, PasswordFieldContainer, ToggleButton, LoginPageButton } from './LoginRegisterStyleComponents';
 import FormControl from '@mui/material';
 
 import IconButton from '@material-ui/core/IconButton';

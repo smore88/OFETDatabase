@@ -58,6 +58,10 @@ body {
     width: 20rem;
     max-width: 100%;
 }
+
+.aligned {
+    flex-direction: column;
+}
   
   
 .add-origin-info-backdrop {

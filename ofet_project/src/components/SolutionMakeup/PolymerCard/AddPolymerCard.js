@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddIcon from '@mui/icons-material/AddOutlined';
 import Button from '@mui/material/Button';
-import { CustomButton, ButtonContainer, ContentContainer, ParentContainer } from '../CustomStyleComponents';
+import { CustomButton, ButtonContainer, ContentContainer, ParentContainer } from '../SolutionMakeupStyleComponents';
 import SinglePolymerCard from './SinglePolymerCard';
 import '../SolutionInformation/SolutionInformation.css';
 

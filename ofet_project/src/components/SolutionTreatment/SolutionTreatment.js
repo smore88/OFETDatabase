@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton } from './CustomStyleComponents';
+import { NextPageButton } from './SolutionTreatmentStyleComponents';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import PoorSolvent from './PoorSolvent/PoorSolvent';
 import NavBar from '../GenericUI/NavBar';

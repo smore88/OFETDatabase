@@ -5,7 +5,7 @@ import { Headers,
     HeaderContainer, 
     CustomButton, 
     SolventDropDowns,
-    ButtonContainer } from '../CustomStyleComponents.js'
+    ButtonContainer } from '../SolutionTreatmentStyleComponents.js'
 
 import AddIcon from '@mui/icons-material/AddOutlined';
 import Button from '@mui/material/Button';

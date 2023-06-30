@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SolMakeSolvent from "./SingleSolventCard";
 import AddIcon from '@mui/icons-material/AddOutlined';
 import Button from '@mui/material/Button';
-import { CustomButton, ButtonContainer, ContentContainer, ParentContainer } from '../CustomStyleComponents';
+import { CustomButton, ButtonContainer, ContentContainer, ParentContainer } from '../SolutionMakeupStyleComponents';
 import SingleSolventCard from './SingleSolventCard';
 
 const AddSolventCard = (props) => {

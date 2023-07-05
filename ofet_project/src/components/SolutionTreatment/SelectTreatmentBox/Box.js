@@ -10,14 +10,14 @@ const Box = (props) => {
     return (
         <SolutionTreatmentBox>
             <HeaderBox>
-                <Typography variant="h6" fontWeight="bold">Select Treatment Step</Typography>
+                <Typography variant="h6" fontWeight="bold">Add Treatment Step</Typography>
             </HeaderBox>
             <ButtonContainer>
-                <CustomButton>POOR SOLVENT</CustomButton>
-                <CustomButton>MIXING</CustomButton>
-                <CustomButton>UV IRRADIATION</CustomButton>
-                <CustomButton>AGING</CustomButton>
-                <CustomButton>SONICATION</CustomButton>
+                <CustomButton onClick={props.handleAddPS}>POOR SOLVENT</CustomButton>
+                <CustomButton onClick={props.handleAddM}>MIXING</CustomButton>
+                <CustomButton onClick={props.handleAddUVI}>UV IRRADIATION</CustomButton>
+                <CustomButton onClick={props.handleAddAging}>AGING</CustomButton>
+                <CustomButton onClick={props.handleAddSonication}>SONICATION</CustomButton>
             </ButtonContainer>
         </SolutionTreatmentBox>
     );

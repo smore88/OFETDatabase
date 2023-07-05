@@ -8,6 +8,8 @@ import { FormControl } from '@mui/material';
 
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
+import './URIrrCard.css';
+
 import { Headers, 
     SolventTextFields, 
     InputFieldsContainer, 
@@ -15,15 +17,16 @@ import { Headers,
     SolventDropDowns} from '../SolutionTreatmentStyleComponents.js'
 
 
-const PoorSolvent = (props) => {
+
+const UVIrr = (props) => {
     const {number, onRemove} = props;
 
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            <div className='solvent-info-card' >
+            <div className='uvirr-info-card' >
                 <HeaderContainer>
-                    <Headers variant="subtitle1">Treatment Step {number}: Poor Solvent</Headers>
+                    <Headers variant="subtitle1">Treatment Step {number}: UV Irradiation</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                 </HeaderContainer>
 
@@ -41,41 +44,51 @@ const PoorSolvent = (props) => {
                         </SolventDropDowns>
                     </FormControl>
                     
-                    <FormControl>
-                        <InputLabel label="iupac-name-label">Iupac Name</InputLabel>
-                        <SolventDropDowns
-                            id="iupac-name-select"
-                        >
-                            <MenuItem value={"chloroform"}>chloroform</MenuItem>
-                            <MenuItem value={"cholorbenzene"}>cholorbenzene</MenuItem>
-                            <MenuItem value={"1,2-dicholorobenzene"}>1,2-dicholorobenzene</MenuItem>
-                            <MenuItem value={"1,2,4-tricholorobenzene"}>1,2,4-tricholorobenzene</MenuItem>
-                            <MenuItem value={"toluene"}>toluene</MenuItem>
-                            <MenuItem value={"p-xylene"}>p-xylene</MenuItem>
-                            <MenuItem value={"methanol"}>methanol</MenuItem>
-                            <MenuItem value={"isopropanol"}>isopropanol</MenuItem>
-                            <MenuItem value={"acetone"}>acetone</MenuItem>
-                        </SolventDropDowns>
-                    </FormControl>
+                    <SolventTextFields 
+                        id="time"
+                        label="Time(min)" 
+                        variant="outlined">
+                    </SolventTextFields>
                 </InputFieldsContainer>
 
                 {/* First 2 input boxes in row 1 */}
                 <InputFieldsContainer>
                     <SolventTextFields
-                        id="pubchem_cid"
-                        label="Pubchem CID"
+                        id="equipment_model"
+                        label="Equipment Model"
                         variant="outlined">
                     </SolventTextFields>
                     
                     <SolventTextFields 
-                        id="vol_frac_added"
-                        label="Vol Frac Added" 
+                        id="intensity"
+                        label="Intensity(W cm2)" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>
 
                 {/* First 2 input boxes in row 2 */}
                 <InputFieldsContainer>
+                    <SolventTextFields
+                        id="wavelength"
+                        label="Wavelength(nm)"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
+                    <SolventTextFields 
+                        id="mixing_speed"
+                        label="Mixing Speed(RPM)" 
+                        variant="outlined">
+                    </SolventTextFields>
+                </InputFieldsContainer>
+
+                {/* First 2 input boxes in row 2 */}
+                <InputFieldsContainer>
+                    <SolventTextFields
+                        id="temperature"
+                        label="Temperature(C)" 
+                        variant="outlined">
+                    </SolventTextFields>
+                    
                     <SolventTextFields
                         id="description"
                         label="Description" 
@@ -87,4 +100,4 @@ const PoorSolvent = (props) => {
     );
 }
 
-export default PoorSolvent;
+export default UVIrr;

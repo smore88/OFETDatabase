@@ -14,8 +14,11 @@ import { Headers,
     HeaderContainer,  
     SolventDropDowns} from '../SolutionTreatmentStyleComponents.js'
 
+import './MixingCard.css';
 
-const PoorSolvent = (props) => {
+
+
+const Mixing = (props) => {
     const {number, onRemove} = props;
 
     return (
@@ -23,7 +26,7 @@ const PoorSolvent = (props) => {
         <div>
             <div className='solvent-info-card' >
                 <HeaderContainer>
-                    <Headers variant="subtitle1">Treatment Step {number}: Poor Solvent</Headers>
+                    <Headers variant="subtitle1">Treatment Step {number}: Mixing</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                 </HeaderContainer>
 
@@ -41,35 +44,25 @@ const PoorSolvent = (props) => {
                         </SolventDropDowns>
                     </FormControl>
                     
-                    <FormControl>
-                        <InputLabel label="iupac-name-label">Iupac Name</InputLabel>
-                        <SolventDropDowns
-                            id="iupac-name-select"
-                        >
-                            <MenuItem value={"chloroform"}>chloroform</MenuItem>
-                            <MenuItem value={"cholorbenzene"}>cholorbenzene</MenuItem>
-                            <MenuItem value={"1,2-dicholorobenzene"}>1,2-dicholorobenzene</MenuItem>
-                            <MenuItem value={"1,2,4-tricholorobenzene"}>1,2,4-tricholorobenzene</MenuItem>
-                            <MenuItem value={"toluene"}>toluene</MenuItem>
-                            <MenuItem value={"p-xylene"}>p-xylene</MenuItem>
-                            <MenuItem value={"methanol"}>methanol</MenuItem>
-                            <MenuItem value={"isopropanol"}>isopropanol</MenuItem>
-                            <MenuItem value={"acetone"}>acetone</MenuItem>
-                        </SolventDropDowns>
-                    </FormControl>
+                    <SolventTextFields
+                        id="mixing_speed"
+                        label="Mixing Speed(RPM)"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
                 </InputFieldsContainer>
 
                 {/* First 2 input boxes in row 1 */}
                 <InputFieldsContainer>
                     <SolventTextFields
-                        id="pubchem_cid"
-                        label="Pubchem CID"
+                        id="temperature"
+                        label="Temperature(C)"
                         variant="outlined">
                     </SolventTextFields>
                     
                     <SolventTextFields 
-                        id="vol_frac_added"
-                        label="Vol Frac Added" 
+                        id="time"
+                        label="Time(h)" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>
@@ -87,4 +80,4 @@ const PoorSolvent = (props) => {
     );
 }
 
-export default PoorSolvent;
+export default Mixing;

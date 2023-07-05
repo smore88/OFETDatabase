@@ -64,22 +64,115 @@ export const ButtonContainer = styled('div')`
 
 export const ParentContainer = styled('div')`
     display: flex;
-    justify-content: center; /* Adjust as needed */
+    
     align-items: flex-start; /* Adjust as needed */
 `;
 
 
 export const NextPageButton = styled(Button)`
-    background-color:  #510674;
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  background-color:  #510674;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  margin: auto;
 
-    &:hover {
-    background-color: #a892ee; /* Update to the desired hover color */
+  /* Add the following styles for center alignment */
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: #a892ee;
+  }
+`;
+
+//// NEW STUFF
+
+export const SolutionTreatmentBox = styled('div')`
+  margin-left: 20px;
+  margin-top: 32px;
+  width: 300px;
+  height: 200px;
+  border: 5px solid #000000;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px; /* Add rounded border radius */
+
+`;
+
+export const HeaderBox = styled('div')`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a892ee;
+    width: 300px;
+    height: 40%;
+    position: relative;
+
+    &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
     }
+`;
 
-    margin-left: 305px;
+export const ButtonContainer2 = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+
+  & > :not(:last-child) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const CustomButton2 = styled(Button)`
+  background-color: #510674;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background-color: #a892ee;
+  }
+`;
+
+export const ContainerMain = styled('div')`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+  gap: 150px; /* Add space of 40px between the two components */
+`;
+
+export const HelpContainer = styled('div')`
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 20px;
+    height: 20px;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 111px;
+    right: 40px;    
 `;

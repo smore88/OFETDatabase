@@ -26,13 +26,16 @@ const AddSolventCard = (props) => {
             <div>
                 {solventCardCount.map((_, index) => (
                     <div key={index}>
-                        <SingleSolventCard number={index + 1} onRemove={() => handleRemoveCard(index)}></SingleSolventCard>
+                        <SingleSolventCard 
+                            number={index + 1} 
+                            onRemove={() => handleRemoveCard(index)}
+                        ></SingleSolventCard>
                     </div>
                 ))}
             </div>
-            <ButtonContainer>
-                <CustomButton onClick={handleSolventCard}>ADD SOLVENT</CustomButton>
-            </ButtonContainer>
+            {/* <ButtonContainer>
+                    <CustomButton onClick={handleSolventCard}>ADD SOLVENT</CustomButton>
+            </ButtonContainer> */}
         </ParentContainer>
     );
 };

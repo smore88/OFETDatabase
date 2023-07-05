@@ -1,44 +1,19 @@
 import React, { useState } from 'react';
-import SolutionInformation from './SolutionInformation/SolutionInformation';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton, ContainerMain } from './SolutionMakeupStyleComponents';
+import { NextPageButton, HelpContainer } from './SubstratePretreatStyleComponents';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+
 import NavBar from '../GenericUI/NavBar';
-import MakeupBox from './SelectMakeUpBox/MakeupBox';
-import SinglePolymerCard from './PolymerCard/SinglePolymerCard';
-import SingleSolventCard from './SolventCard/SingleSolventCard';
+
+import './SubstratePretreatStyleComponents';
+
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
-import { HelpContainer } from './SolutionMakeupStyleComponents';
 
-const SolutionMakeUpScreen = (props) => {
+const SubstratePretreat = (props) => {
 
-    // For the polymer Cards
-    const [polymerCards, setPolymerCards] = useState([1]);
 
-    const handlePolymerCard = () => {
-        setPolymerCards([...polymerCards, {}]);
-    }
-
-    const handleRemovePolymerCard = (index) => {
-        setPolymerCards((polymerCards) =>
-            polymerCards.filter((_, i) => i !== index)
-        );
-    }
-
-    // For solvent cards
-    const [solventCards, setSolventCards] = useState([1]);
-
-    const handleSolventCard = () => {
-        setSolventCards([...solventCards, {}]);
-    }
-
-    const handleRemoveSolventCard = (index) => {
-        setSolventCards((solventCards) =>
-            solventCards.filter((_, i) => i !== index)
-        );
-    }
-
-    // Need to be able to render a help icon button that has the details for some of the more confusing stuff
+    // 2) Need to be able to render a help icon button that has the details for some of the more confusing stuff
 
     const [isAlertOpen, setAlert] = useState(false);
 
@@ -93,34 +68,24 @@ const SolutionMakeUpScreen = (props) => {
         </>
     );
 
-    // Navigate to different things
+
+    // Navigate to the next page here
+
     const navigateTo = useNavigate();
     const handleNext = () => {
         // Perform logic
         // ...
-        // Navigate to the solution treatment page
-        navigateTo('/sol-treatment');
+        // Navigate to the Coating Process page
+        navigateTo('/coat-process');
     };
 
     return (
         <div>
-            <NavBar title="Solution Makeup"></NavBar>
+            <NavBar title="Substrate Pretreat"></NavBar>
             {renderHelpButton()}
-            <ContainerMain>
-                <MakeupBox handleAddPolymer={handlePolymerCard} handleAddSolvent={handleSolventCard}></MakeupBox>
-                <div>
-                    <SolutionInformation></SolutionInformation>
-                    {solventCards.map((_, index) => (
-                        <SingleSolventCard number={index + 1} onRemove={() => handleRemoveSolventCard(index)}></SingleSolventCard>
-                    ))}
-                    {polymerCards.map((_, index) => (
-                        <SinglePolymerCard number={index + 1} onRemove={() => handleRemovePolymerCard(index)}></SinglePolymerCard>
-                    ))}
-                </div>
-            </ContainerMain>
-            <NextPageButton onClick={handleNext}>NEXT</NextPageButton>
+            <NextPageButton onClick={handleNext}>Next</NextPageButton>
         </div>
     );
 };
 
-export default SolutionMakeUpScreen;
+export default SubstratePretreat;

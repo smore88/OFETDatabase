@@ -4,6 +4,9 @@ import DataOriginForm from './components/ExperimentalDataOriginScreen/DataOrigin
 import Login from './components/LoginRegisterScreen/Login';
 import SolutionMakeUpScreen from './components/SolutionMakeup/SolutionMakeupScreen';
 import SolutionTreatment from './components/SolutionTreatment/SolutionTreatment';
+import DeviceFabrication from './components/DeviceFabrication/DeviceFabrication';
+import SubstratePretreat from './components/SubstratePretreat/SubstratePretreat';
+import CoatingProcess from './components/CoatingProcess/CoatingProcess';
 
 import './App.css';
 
@@ -15,11 +18,10 @@ function App() {
           <Route path="/data-origin" element={<DataOriginForm></DataOriginForm>}></Route>
           <Route path="/sol-makeup" element={<SolutionMakeUpScreen></SolutionMakeUpScreen>}></Route>
           <Route path="/sol-treatment" element={<SolutionTreatment></SolutionTreatment>}></Route>
+          <Route path="/dev-fabrication" element={<DeviceFabrication></DeviceFabrication>}></Route>
+          <Route path="/sub-pretreat" element={<SubstratePretreat></SubstratePretreat>}></Route>
+          <Route path="/coat-process" element={<CoatingProcess></CoatingProcess>}></Route>
         </Routes>
-        {/* <Login></Login> */}
-        {/* <DataOriginForm></DataOriginForm> */}
-        {/* <SolutionMakeUpScreen></SolutionMakeUpScreen> */}
-        {/* <SolutionTreatment></SolutionTreatment> */}
     </div>
   );
 };

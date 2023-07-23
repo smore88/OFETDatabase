@@ -13,7 +13,7 @@ export const Headers = styled(Typography)`
     text-align: left;
     margin-left: 30px;
 `;
-export const SolventTextFields = styled(TextField)`
+export const DevTextFields = styled(TextField)`
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -21,7 +21,7 @@ export const SolventTextFields = styled(TextField)`
     height: 100%;
 `;
 
-export const SolventDropDowns = styled(Select)`
+export const DevDropDowns = styled(Select)`
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -29,7 +29,7 @@ export const SolventDropDowns = styled(Select)`
     color: black;
 `;
 
-export const InputFieldsContainer = styled('div')`
+export const DevFieldsContainer = styled('div')`
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -52,38 +52,33 @@ export const ParentContainer = styled('div')`
 
 
 export const NextPageButton = styled(Button)`
-  background-color:  #510674;
+  background-color: #510674;
   color: white;
   font-weight: bold;
   border-radius: 8px;
   padding: 10px 20px;
   transition: background-color 0.3s ease;
   margin: auto;
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   &:hover {
+  background-color: #a892ee;
+  }
+}
 
   /* Add the following styles for center alignment */
-  display: flex;
-  justify-content: center;
+  
 
-  &:hover {
-    background-color: #a892ee;
-  }
+ 
 `;
 
 
 
 // NEW THINGS HERE 
 
-export const SolutionTreatmentBox = styled('div')`
-  margin-left: 20px;
-  margin-top: 32px;
-  width: 300px;
-  height: 400px;
-  border: 5px solid #000000;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px; /* Add rounded border radius */
 
-`;
 
 export const HeaderBox = styled('div')`
     display: flex;
@@ -159,5 +154,6 @@ export const ContainerMain = styled('div')`
   align-items: flex-start;
   margin-left: 30px;
   margin-top: 0px;
+  
   gap: 150px; /* Add space of 40px between the two components */
 `;

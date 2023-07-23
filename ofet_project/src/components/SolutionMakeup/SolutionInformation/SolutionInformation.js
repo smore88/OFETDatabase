@@ -23,7 +23,7 @@ const SolutionInformation = (props) => {
 
     return (
         <div>
-            <div className='solvent-info-card'>
+            <div className='addsolvent-info-card'>
                 <HeaderContainer>
                     <Headers variant="subtitle1">Enter Solution Information</Headers> 
                 </HeaderContainer>

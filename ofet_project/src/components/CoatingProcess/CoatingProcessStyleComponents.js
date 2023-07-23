@@ -13,7 +13,7 @@ export const Headers = styled(Typography)`
     text-align: left;
     margin-left: 30px;
 `;
-export const SolventTextFields = styled(TextField)`
+export const CoatTextFields = styled(TextField)`
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -21,7 +21,7 @@ export const SolventTextFields = styled(TextField)`
     height: 100%;
 `;
 
-export const SolventDropDowns = styled(Select)`
+export const CoatDropDowns = styled(Select)`
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -29,7 +29,7 @@ export const SolventDropDowns = styled(Select)`
     color: black;
 `;
 
-export const InputFieldsContainer = styled('div')`
+export const CoatFieldsContainer = styled('div')`
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -44,9 +44,27 @@ export const HeaderContainer = styled('div')`
     justify-content: space-between;
 `;
 
+export const CustomButton = styled(Button)`
+    background-color:  #510674;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+
+    &:hover {
+    background-color: #a892ee; /* Update to the desired hover color */
+    }
+`;
+
+export const ButtonContainer = styled('div')`
+    margin-top: 31px;
+    margin-left: 10px;
+`;
+
 export const ParentContainer = styled('div')`
     display: flex;
-    justify-content: center; /* Adjust as needed */
+    
     align-items: flex-start; /* Adjust as needed */
 `;
 
@@ -69,19 +87,20 @@ export const NextPageButton = styled(Button)`
   }
 `;
 
-
-
-// NEW THINGS HERE 
+//// NEW STUFF
 
 export const SolutionTreatmentBox = styled('div')`
   margin-left: 20px;
   margin-top: 32px;
   width: 300px;
-  height: 400px;
+  height: 300px;
   border: 5px solid #000000;
   display: flex;
   flex-direction: column;
   border-radius: 8px; /* Add rounded border radius */
+  display: flex;
+  align-items: center;
+
 
 `;
 
@@ -91,7 +110,7 @@ export const HeaderBox = styled('div')`
     justify-content: center;
     background-color: #a892ee;
     width: 300px;
-    height: 20%;
+    height: 40%;
     position: relative;
 
     &::after {
@@ -105,13 +124,13 @@ export const HeaderBox = styled('div')`
     }
 `;
 
-export const ButtonContainer = styled('div')`
+export const ButtonContainer2 = styled('div')`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 180%;
   padding: 10px;
   box-sizing: border-box;
   overflow-y: auto;
@@ -121,7 +140,7 @@ export const ButtonContainer = styled('div')`
   }
 `;
 
-export const CustomButton = styled(Button)`
+export const CustomButton2 = styled(Button)`
   background-color: #510674;
   color: white;
   font-weight: bold;
@@ -133,6 +152,14 @@ export const CustomButton = styled(Button)`
   &:hover {
     background-color: #a892ee;
   }
+`;
+
+export const ContainerMain = styled('div')`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+  gap: 150px; /* Add space of 40px between the two components */
 `;
 
 export const HelpContainer = styled('div')`
@@ -151,13 +178,4 @@ export const HelpContainer = styled('div')`
     position: fixed;
     top: 111px;
     right: 40px;    
-`;
-
-export const ContainerMain = styled('div')`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 30px;
-  margin-top: 0px;
-  gap: 150px; /* Add space of 40px between the two components */
 `;

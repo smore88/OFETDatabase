@@ -1,16 +1,42 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton, HelpContainer } from './DeviceFabricationStyleComponents';
+import { NextPageButton, HelpContainer, ContainerMain } from './DeviceFabricationStyleComponents';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 import NavBar from '../GenericUI/NavBar';
+//import Box from './SelectTreatmentBox/Box';
 
-import './DeviceFabricationStyleComponents';
+import Electrode from './Electrode/Electrode';
+import Substrate from './Substrate/Substrate';
+//import Aging from './Aging/Aging';
+//import Sonication from './Sonication/Sonication';
+import Othermeta from './Othermeta/Othermeta';
 
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 
 const DeviceFabrication = (props) => {
+
+
+    // 1) For all the possible cards
+    const [allSteps, setAllSteps] = useState([]);
+
+    const handleElectrodeCard = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'Electrode' }]);
+    };
+
+    const handleSubstrateCard = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'Substrate' }]);
+    };
+
+    const handleOtherMeta = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'OtherMeta' }]);
+    };
+
+      
+    const handleRemoveStep = (index) => {
+        setAllSteps((prevSteps) => prevSteps.filter((_, i) => i !== index));
+    };
 
 
     // 2) Need to be able to render a help icon button that has the details for some of the more confusing stuff
@@ -68,22 +94,53 @@ const DeviceFabrication = (props) => {
         </>
     );
 
+    // Show the Next Page button
+    const [showNextPageButton, setShowNextPageButton] = useState(false);
 
-    // Navigate to the next page here
+    const showButton = () => {
+        setShowNextPageButton(true);
+    };
+
+
+    // 3) Navigate to the next page here
 
     const navigateTo = useNavigate();
     const handleNext = () => {
         // Perform logic
         // ...
-        // Navigate to the Substrate Pretreat page
+        // Navigate to the Device Fabrication page
         navigateTo('/sub-pretreat');
     };
+
+    const handleElectrodeButtonClick = () => {
+        handleElectrodeCard();
+        showButton();
+        
+    };
+    
+    const handleSubstrateButtonClick = () => {
+        handleSubstrateCard();
+        showButton();
+    };
+    
+    const handleOtherMetaButtonClick = () => {
+        handleOtherMeta();
+        showButton();
+    };
+      
 
     return (
         <div>
             <NavBar title="Device Fabrication"></NavBar>
             {renderHelpButton()}
-            <NextPageButton onClick={handleNext}>Next</NextPageButton>
+            <ContainerMain>
+                <div>
+                    <Electrode></Electrode>
+                    <Substrate></Substrate>
+                    <Othermeta></Othermeta>
+                </div>
+            </ContainerMain>
+            <NextPageButton onClick={handleNext}>NEXT</NextPageButton>
         </div>
     );
 };

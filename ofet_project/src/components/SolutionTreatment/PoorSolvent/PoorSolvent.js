@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
-
-
 import { FormControl } from '@mui/material';
-
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+
+import './PoorSolventCard.css';
 
 import { Headers, 
     SolventTextFields, 
@@ -21,7 +19,7 @@ const PoorSolvent = (props) => {
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            <div className='solvent-info-card' >
+            <div className='poor-solvent-info-card' >
                 <HeaderContainer>
                     <Headers variant="subtitle1">Treatment Step {number}: Poor Solvent</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>

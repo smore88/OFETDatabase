@@ -115,8 +115,8 @@ const SolutionTreatment = (props) => {
     const handleNext = () => {
         // Perform logic
         // ...
-        // Navigate to the Device Fabrication page
-        navigateTo('/dev-fabrication');
+        // Navigate to the solution treatment page
+        navigateTo('/device-fab');
     };
 
     const handlePSButtonClick = () => {

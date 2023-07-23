@@ -28,7 +28,7 @@ const SinglePolymerCard = (props) => {
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            <div className='solvent-info-card' >
+            <div className='addsolvent-info-card' >
                 {/* below will be for the name and addIcon */}
                 <HeaderContainer>
                     <Headers variant="subtitle1">Polymer {number}</Headers>

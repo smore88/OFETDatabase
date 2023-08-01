@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton, HelpContainer } from './DeviceFabricationStyleComponents';
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { NextPageButton, HelpContainer, ContainerMain, NextPageButtonContainer } from './DeviceFabricationStyleComponents';
+// import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 import NavBar from '../GenericUI/NavBar';
 
-import './DeviceFabricationStyleComponents';
-
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+import Electrode from './Electrode';
+import MaterialDetails from './MaterialDetails';
+import OtherMetaData from './OtherMetaData';
 
-const DeviceFabrication = (props) => {
+const DeviceFabrication = () => {
 
-
-    // 2) Need to be able to render a help icon button that has the details for some of the more confusing stuff
-
+    // 1) Need to be able to render a help icon button that has the details for some of the more confusing stuff
     const [isAlertOpen, setAlert] = useState(false);
 
     const handleHelpClick = () => {
@@ -69,21 +68,27 @@ const DeviceFabrication = (props) => {
     );
 
 
-    // Navigate to the next page here
+    // 2) Navigate to the next page here
 
     const navigateTo = useNavigate();
     const handleNext = () => {
         // Perform logic
         // ...
-        // Navigate to the Substrate Pretreat page
+        // Navigate to the Device Fabrication page
         navigateTo('/sub-pretreat');
     };
+      
 
     return (
         <div>
             <NavBar title="Device Fabrication"></NavBar>
             {renderHelpButton()}
-            <NextPageButton onClick={handleNext}>Next</NextPageButton>
+            <Electrode></Electrode>
+            <MaterialDetails></MaterialDetails>
+            <OtherMetaData></OtherMetaData>
+            <NextPageButtonContainer>
+                <NextPageButton onClick={handleNext}>NEXT</NextPageButton>
+            </NextPageButtonContainer>
         </div>
     );
 };

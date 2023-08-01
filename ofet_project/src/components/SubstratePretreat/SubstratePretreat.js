@@ -1,20 +1,53 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton, HelpContainer } from './SubstratePretreatStyleComponents';
+import { NextPageButton, HelpContainer, ContainerMain } from './SubstratePretreatStyleComponents';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
 import NavBar from '../GenericUI/NavBar';
+import Box from './SelectTreatmentBox/Box';
+
 
 import './SubstratePretreatStyleComponents';
 
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+import ChemicalTreat from './ChemicalTreat/ChemicalTreat';
 
 const SubstratePretreat = (props) => {
 
+    // 1) For all the possible cards
+    const [pretreatSteps, setAllSteps] = useState([]);
+
+    const handleChemicalTreat = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'ChemicalTreat' }]);
+    };
+
+    const handleUVOzone = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'UVOzone' }]);
+    };
+
+    const handleSAM = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'SAM' }]);
+    };
+
+    const handlePlasma = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'Plasma' }]);
+    };
+
+    const handleAnnealing = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'Annealing' }]);
+    };
+
+    const handleOther = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'OtherSP' }]);
+    };
+      
+    const handleRemoveStep = (index) => {
+        setAllSteps((prevSteps) => prevSteps.filter((_, i) => i !== index));
+    };
+
 
     // 2) Need to be able to render a help icon button that has the details for some of the more confusing stuff
-
     const [isAlertOpen, setAlert] = useState(false);
 
     const handleHelpClick = () => {
@@ -68,9 +101,14 @@ const SubstratePretreat = (props) => {
         </>
     );
 
+    // Show the Next Page button
+    const [showNextPageButton, setShowNextPageButton] = useState(false);
+
+    const showButton = () => {
+        setShowNextPageButton(true);
+    };
 
     // Navigate to the next page here
-
     const navigateTo = useNavigate();
     const handleNext = () => {
         // Perform logic
@@ -79,10 +117,65 @@ const SubstratePretreat = (props) => {
         navigateTo('/coat-process');
     };
 
+    const handleCTButtonClick = () => {
+        handleChemicalTreat();
+        showButton();
+    };
+    
+    const handleUVOButtonClick = () => {
+        handleUVOzone();
+        showButton();
+    };
+    
+    const handleSAMButtonClick = () => {
+        handleSAM();
+        showButton();
+    };
+      
+    const handlePlasButtonClick = () => {
+        handlePlasma();
+        showButton();
+    };
+      
+    const handleAnnButtonClick = () => {
+        handleAnnealing();
+        showButton();
+    };
+
+    const handleOtherButtonClick = () => {
+        handleOther();
+        showButton();
+    };
+
     return (
         <div>
             <NavBar title="Substrate Pretreat"></NavBar>
             {renderHelpButton()}
+            <ContainerMain>
+                <Box 
+                    handleAddCT={handleCTButtonClick}
+                    handleAddUVO={handleUVOButtonClick}
+                    handleAddSAM={handleSAMButtonClick}
+                    handleAddPlas={handlePlasButtonClick}
+                    handleAddAnn={handleAnnButtonClick}
+                    handleAddOther={handleOtherButtonClick}>
+                </Box>
+                <div>
+                    {/* Display all steps in the order they are added */}
+                    {pretreatSteps.map((step, index) => {
+                        if(step.type === 'ChemicalTreat') {
+                            return (
+                                <ChemicalTreat
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></ChemicalTreat>
+                            );
+                        }
+                    })}
+                </div>
+            </ContainerMain>
+
             <NextPageButton onClick={handleNext}>Next</NextPageButton>
         </div>
     );

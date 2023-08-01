@@ -77,7 +77,7 @@ export const SolutionTreatmentBox = styled('div')`
   margin-left: 20px;
   margin-top: 32px;
   width: 300px;
-  height: 400px;
+  height: 450px;
   border: 5px solid #000000;
   display: flex;
   flex-direction: column;

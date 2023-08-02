@@ -8,13 +8,13 @@ import { FormControl } from '@mui/material';
 
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-import './Aging.css';
+import './Annealing.css';
 
 import { Headers, 
     SolventTextFields, 
     InputFieldsContainer, 
     HeaderContainer,  
-    SolventDropDowns} from '../SolutionTreatmentStyleComponents.js'
+    SolventDropDowns} from '../SubstratePretreatStyleComponents'
 
 const Annealing = (props) => {
     const {number, onRemove} = props;
@@ -24,7 +24,7 @@ const Annealing = (props) => {
         <div>
             <div className='aging-info-card' >
                 <HeaderContainer>
-                    <Headers variant="subtitle1">Treatment Step {number}: Aging</Headers>
+                    <Headers variant="subtitle1">Treatment Step {number}: Annealing</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                 </HeaderContainer>
 

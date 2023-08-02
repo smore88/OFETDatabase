@@ -1,44 +1,37 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NextPageButton, HelpContainer, ContainerMain } from './SolutionTreatmentStyleComponents';
+import { NextPageButton, HelpContainer, ContainerMain } from './PostProcessingStyleComponents';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 
+
+// Various Components in the page UI
 import NavBar from '../GenericUI/NavBar';
 import Box from './SelectTreatmentBox/Box';
+import Annealing from './Annealing/Annealing';
+import ChemicalTreat from './ChemicalTreatment/ChemicalTreatment';
+import OtherSP from './OtherSP/OtherSP';
 
-import PoorSolvent from './PoorSolvent/PoorSolvent';
-import Mixing from './Mixing/Mixing';
-import Aging from './Aging/Aging';
-import Sonication from './Sonication/Sonication';
-import UVIrr from './UVIrradiation/UVIrr';
 
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+import ChemicalTreatment from './ChemicalTreatment/ChemicalTreatment';
 
-const SolutionTreatment = (props) => {
+const PostProcessing = (props) => {
 
 
     // 1) For all the possible cards
     const [allSteps, setAllSteps] = useState([]);
 
-    const handlePoorSolventCard = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'PoorSolvent' }]);
+    const handleAnnealing = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'Annealing' }]);
     };
 
-    const handleMixingCard = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'Mixing' }]);
+    const handleChemicalTreat = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'ChemicalTreat' }]);
     };
 
-    const handleUVIrradiation = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'UVIrr' }]);
-    };
-
-    const handleAging = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'Aging' }]);
-    };
-
-    const handleSonication = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'Sonication' }]);
+    const handleOther = () => {
+        setAllSteps((prevSteps) => [...prevSteps, { type: 'OtherSP' }]);
     };
       
     const handleRemoveStep = (index) => {
@@ -102,111 +95,80 @@ const SolutionTreatment = (props) => {
     );
 
     // Show the Next Page button
-    const [showNextPageButton, setShowNextPageButton] = useState(false);
+    const [nextButton, setShowNextPageButton] = useState(false);
 
     const showButton = () => {
-        console.log("showButton is triggered");
         setShowNextPageButton(true);
     };
 
-
-    // 3) Navigate to the next page here
-
+    // Navigate to the next page here
     const navigateTo = useNavigate();
     const handleNext = () => {
         // Perform logic
         // ...
-        // Navigate to the Device Fabrication page
-        navigateTo('/dev-fabrication');
+        // Navigate to the Device Measurement page
+        navigateTo('/dev-measurement');
     };
 
-    const handlePSButtonClick = () => {
-        handlePoorSolventCard();
-        showButton();
-    };
-    
-    const handleMButtonClick = () => {
-        handleMixingCard();
-        showButton();
-    };
-    
-    const handleUVIButtonClick = () => {
-        handleUVIrradiation();
+    const handleCTButtonClick = () => {
+        handleChemicalTreat();
         showButton();
     };
       
-    const handleAgingButtonClick = () => {
-        handleAging();
+    const handleAnnButtonClick = () => {
+        handleAnnealing();
         showButton();
     };
-      
-    const handleSonicationButtonClick = () => {
-        handleSonication();
+
+    const handleOtherButtonClick = () => {
+        handleOther();
         showButton();
     };
 
     return (
         <div>
-            <NavBar title="Solution Treatment"></NavBar>
+            <NavBar title="Post Processing"></NavBar>
             {renderHelpButton()}
             <ContainerMain>
                 <Box 
-                    handleAddPS={handlePSButtonClick}
-                    handleAddM={handleMButtonClick}
-                    handleAddUVI={handleUVIButtonClick}
-                    handleAddAging={handleAgingButtonClick}
-                    handleAddSonication={handleSonicationButtonClick}
+                    handleAddCT={handleCTButtonClick}
+                    handleAddAnn={handleAnnButtonClick}
+                    handleAddOth={handleOtherButtonClick}
                 ></Box>
                 <div>
                     {/* Display all steps in the order they are added */}
                     {allSteps.map((step, index) => {
-                        if(step.type === 'PoorSolvent') {
+                        if(step.type === 'Annealing') {
                             return (
-                                <PoorSolvent
+                                <Annealing
                                     key={index}
                                     number={index + 1}
                                     onRemove={() => handleRemoveStep(index)}
-                                ></PoorSolvent>
+                                ></Annealing>
                             );
-                        } else if(step.type === 'Mixing') {
+                        } else if(step.type === 'OtherSP') {
                             return (
-                                <Mixing
+                                <OtherSP
                                     key={index}
                                     number={index + 1}
                                     onRemove={() => handleRemoveStep(index)}
-                                ></Mixing>
+                                ></OtherSP>
                             );
-                        } else if(step.type === 'Aging') {
+                        } else if(step.type === 'ChemicalTreat') {
                             return (
-                                <Aging
+                                <ChemicalTreatment
                                     key={index}
                                     number={index + 1}
                                     onRemove={() => handleRemoveStep(index)}
-                                ></Aging>
-                            );
-                        } else if(step.type === 'Sonication') {
-                            return (
-                                <Sonication
-                                    key={index}
-                                    number={index + 1}
-                                    onRemove={() => handleRemoveStep(index)}
-                                ></Sonication>
-                            );
-                        } else if(step.type === 'UVIrr') {
-                            return (
-                                <UVIrr
-                                    key={index}
-                                    number={index + 1}
-                                    onRemove={() => handleRemoveStep(index)}
-                                ></UVIrr>
+                                ></ChemicalTreatment>
                             );
                         }
                     })}
                 </div>
             </ContainerMain>
-            {showNextPageButton && <NextPageButton onClick={handleNext}>Next</NextPageButton>}
+            {nextButton && <NextPageButton onClick={handleNext}>Next</NextPageButton>}
         </div>
     );
 };
 
-export default SolutionTreatment;
+export default PostProcessing;

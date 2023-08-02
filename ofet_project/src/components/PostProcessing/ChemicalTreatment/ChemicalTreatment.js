@@ -8,39 +8,27 @@ import { FormControl } from '@mui/material';
 
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-import './OtherSP.css';
-
 import { Headers, 
     SolventTextFields, 
     InputFieldsContainer, 
     HeaderContainer,  
-    SolventDropDowns} from '../SubstratePretreatStyleComponents'
+    SolventDropDowns} from '../PostProcessingStyleComponents.js'
 
-const OtherSP = (props) => {
+import './ChemicalTreatment.css';
+
+
+
+const ChemicalTreatment = (props) => {
     const {number, onRemove} = props;
 
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            <div className='othersp-info-card'>
+            <div className='chem-info-card' >
                 <HeaderContainer>
-                    <Headers variant="subtitle1">Treatment Step {number}: Other</Headers>
+                    <Headers variant="subtitle1">Treatment Step {number}: Chemical Treatment</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                 </HeaderContainer>
-
-				<InputFieldsContainer>
-                    <SolventTextFields
-                        id="time"
-                        label="Time"
-                        variant="outlined">
-                    </SolventTextFields>
-                    
-                    <SolventTextFields 
-                        id="equip_model"
-                        label="Equipment Model" 
-                        variant="outlined">
-                    </SolventTextFields>
-                </InputFieldsContainer>
 
                 {/* First 2 input boxes in row 0 */}
                 <InputFieldsContainer style={{ marginTop: 10 }}>
@@ -55,20 +43,35 @@ const OtherSP = (props) => {
                             <MenuItem value={"inert"}>Inert</MenuItem>
                         </SolventDropDowns>
                     </FormControl>
+                    
+                    <SolventTextFields
+                        id="pubchem_cid"
+                        label="Pubchem CID"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
+                </InputFieldsContainer>
 
-					<SolventTextFields
-                        id="intensity_"
-                        label="Intensity"
+                {/* First 2 input boxes in row 1 */}
+                <InputFieldsContainer>
+                    <SolventTextFields
+                        id="temperature"
+                        label="Temperature(C)"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
+                    <SolventTextFields 
+                        id="time"
+                        label="Time(h)" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>
 
-                {/* First 2 input boxes in row 1 */}
-
+                {/* First 2 input boxes in row 2 */}
                 <InputFieldsContainer>
                     <SolventTextFields
                         id="description"
-                        label="Description"
+                        label="Description" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>
@@ -77,4 +80,4 @@ const OtherSP = (props) => {
     );
 }
 
-export default OtherSP;
+export default ChemicalTreatment;

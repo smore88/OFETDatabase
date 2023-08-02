@@ -12,38 +12,43 @@ import './SubstratePretreatStyleComponents';
 import { IconButton, Dialog, DialogContent, DialogTitle, Typography } from '@mui/material';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import ChemicalTreat from './ChemicalTreat/ChemicalTreat';
+import UVOzone from './UVOzone/UVOzone';
+import OtherSP from './OtherSP/OtherSP';
+import Annealing from './Annealing/Annealing';
+import Plasma from './Plasma/Plasma';
+import SAM from './SAM/SAM';
 
 const SubstratePretreat = (props) => {
 
     // 1) For all the possible cards
-    const [pretreatSteps, setAllSteps] = useState([]);
+    const [pretreatSteps, setSteps] = useState([]);
 
     const handleChemicalTreat = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'ChemicalTreat' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'ChemicalTreat' }]);
     };
 
     const handleUVOzone = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'UVOzone' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'UVOzone' }]);
     };
 
     const handleSAM = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'SAM' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'SAM' }]);
     };
 
     const handlePlasma = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'Plasma' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'Plasma' }]);
     };
 
     const handleAnnealing = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'Annealing' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'Annealing' }]);
     };
 
     const handleOther = () => {
-        setAllSteps((prevSteps) => [...prevSteps, { type: 'OtherSP' }]);
+        setSteps((prevSteps) => [...prevSteps, { type: 'OtherSP' }]);
     };
       
     const handleRemoveStep = (index) => {
-        setAllSteps((prevSteps) => prevSteps.filter((_, i) => i !== index));
+        setSteps((prevSteps) => prevSteps.filter((_, i) => i !== index));
     };
 
 
@@ -102,7 +107,7 @@ const SubstratePretreat = (props) => {
     );
 
     // Show the Next Page button
-    const [showNextPageButton, setShowNextPageButton] = useState(false);
+    const [nextPageAfterButton, setShowNextPageButton] = useState(false);
 
     const showButton = () => {
         setShowNextPageButton(true);
@@ -171,12 +176,52 @@ const SubstratePretreat = (props) => {
                                     onRemove={() => handleRemoveStep(index)}
                                 ></ChemicalTreat>
                             );
+                        } else if(step.type === 'UVOzone') {
+                            return (
+                                <UVOzone
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></UVOzone>
+                            );
+                        } else if(step.type === 'SAM') {
+                            return (
+                                <SAM
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></SAM>
+                            );
+                        } else if(step.type === 'Annealing') {
+                            return (
+                                <Annealing
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></Annealing>
+                            );
+                        } else if(step.type === 'OtherSP') {
+                            return (
+                                <OtherSP
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></OtherSP>
+                            );
+                        } else if(step.type === 'Plasma') {
+                            return (
+                                <Plasma
+                                    key={index}
+                                    number={index + 1}
+                                    onRemove={() => handleRemoveStep(index)}
+                                ></Plasma>
+                            );
                         }
                     })}
                 </div>
             </ContainerMain>
 
-            <NextPageButton onClick={handleNext}>Next</NextPageButton>
+            {nextPageAfterButton && <NextPageButton onClick={handleNext}>Next</NextPageButton>}
         </div>
     );
 };

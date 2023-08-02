@@ -8,13 +8,12 @@ import { FormControl } from '@mui/material';
 
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-import './OtherSP.css';
-
 import { Headers, 
     SolventTextFields, 
     InputFieldsContainer, 
     HeaderContainer,  
-    SolventDropDowns} from '../SubstratePretreatStyleComponents'
+    SolventDropDowns} from '../PostProcessingStyleComponents.js'
+
 
 const OtherSP = (props) => {
     const {number, onRemove} = props;
@@ -22,25 +21,11 @@ const OtherSP = (props) => {
     return (
         // Whole purple backdrop card, later make this into a card.js and populate that, but for now this is good
         <div>
-            <div className='othersp-info-card'>
+            <div className='othersp-info-card' >
                 <HeaderContainer>
                     <Headers variant="subtitle1">Treatment Step {number}: Other</Headers>
                     <RemoveCircleOutlineIcon onClick={onRemove}></RemoveCircleOutlineIcon>
                 </HeaderContainer>
-
-				<InputFieldsContainer>
-                    <SolventTextFields
-                        id="time"
-                        label="Time"
-                        variant="outlined">
-                    </SolventTextFields>
-                    
-                    <SolventTextFields 
-                        id="equip_model"
-                        label="Equipment Model" 
-                        variant="outlined">
-                    </SolventTextFields>
-                </InputFieldsContainer>
 
                 {/* First 2 input boxes in row 0 */}
                 <InputFieldsContainer style={{ marginTop: 10 }}>
@@ -56,19 +41,35 @@ const OtherSP = (props) => {
                         </SolventDropDowns>
                     </FormControl>
 
-					<SolventTextFields
-                        id="intensity_"
-                        label="Intensity"
+                    <SolventTextFields
+                        id="field_1"
+                        label="Field 1"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
+                    
+                </InputFieldsContainer>
+
+                {/* First 2 input boxes in row 1 */}
+                <InputFieldsContainer>
+                    <SolventTextFields
+                        id="field_2"
+                        label="Field 2"
+                        variant="outlined">
+                    </SolventTextFields>
+                    
+                    <SolventTextFields 
+                        id="field_3"
+                        label="Field 3" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>
 
-                {/* First 2 input boxes in row 1 */}
-
+                {/* First 2 input boxes in row 2 */}
                 <InputFieldsContainer>
                     <SolventTextFields
                         id="description"
-                        label="Description"
+                        label="Description" 
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>

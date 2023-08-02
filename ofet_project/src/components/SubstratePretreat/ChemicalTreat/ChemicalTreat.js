@@ -43,14 +43,19 @@ const ChemicalTreat = (props) => {
                     </FormControl>
                     
                     <FormControl>
-                        <InputLabel id="environment-label">Environment</InputLabel>
+                        <InputLabel id="ipuacname-label">Iupac Name</InputLabel>
                         <SolventDropDowns
-                            id="environment-select"
+                            id="ipuacname-select"
                         >
-                            <MenuItem value={"air"}>Air</MenuItem>
-                            <MenuItem value={"nitrogen"}>Nitrogen</MenuItem>
-                            <MenuItem value={"argon"}>Argon</MenuItem>
-                            <MenuItem value={"inert"}>Inert</MenuItem>
+                            <MenuItem value={"chloroform"}>Chloroform</MenuItem>
+                            <MenuItem value={"chlorobenzene"}>Chlorobenzene</MenuItem>
+                            <MenuItem value={"12-dicho"}>1,2-dichlorobenzene</MenuItem>
+                            <MenuItem value={"124-tricho"}>1,2,4-tricholorobenzene</MenuItem>
+                            <MenuItem value={"toluene"}>Toluene</MenuItem>
+                            <MenuItem value={"p-xylene"}>p-xylene</MenuItem>
+                            <MenuItem value={"methanol"}>Methanol</MenuItem>
+                            <MenuItem value={"isopro"}>Isopropanol</MenuItem>
+                            <MenuItem value={"acetone"}>Acetone</MenuItem>
                         </SolventDropDowns>
                     </FormControl>
                 </InputFieldsContainer>
@@ -58,14 +63,22 @@ const ChemicalTreat = (props) => {
                 {/* First 2 input boxes in row 1 */}
                 <InputFieldsContainer>
                     <SolventTextFields
-                        id="time"
-                        label="Time(hr)"
+                        id="temp"
+                        label="Temperature"
                         variant="outlined">
                     </SolventTextFields>
                     
                     <SolventTextFields 
+                        id="time"
+                        label="Time" 
+                        variant="outlined">
+                    </SolventTextFields>
+                </InputFieldsContainer>
+
+                <InputFieldsContainer>
+                    <SolventTextFields
                         id="description"
-                        label="Description" 
+                        label="Description"
                         variant="outlined">
                     </SolventTextFields>
                 </InputFieldsContainer>

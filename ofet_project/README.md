@@ -21,12 +21,13 @@ You have cloned the github repository!(Hopefully) Now from here either do the fo
 # Step 4
 The way that react app starts is they have set of instructions inside the package.json file. If you open open the branch of the "OFET Database" folder into the "ofet_project" folder you will see a file called package-lock.json and package.json. These files contain all my package dependencies and my script instructions to run the react application.
 	1. so first cd into ofet_project, we want to be in the same level as the package.json file, this should look something like cd OFETDatabase -> cd ofet_project, to check if you type ls in your iTerm or git Bash you will see package.json listed as one of the files in there
-	2. try running the command "npm start", you will get an error saying react-scripts not found.
+	2. try running the command: `npm start`, you will get an error saying react-scripts not found.
 
 # Step 5
-This error is because you need to delete the "node_modules" folder(for some people this might not exist already, to check if it exists this folder will be at the same level as public and src), if its there just delete it and run either of the following commands
-	1. npm install --force (should be this one #1)
-	2. npm install --legacy-peer-deps
+This error is because you need to delete the "node_modules" folder(for some people this might not exist already, to check if it exists this folder will be at the same level as public and src), if its there just delete it and run either of the following command: `npm install --force`
 
 # Step 6
 now you can run the following command: `npm start` and you will see the React App pop up in google chrome at your local host port
+
+# Some Notes
+If it is your first time running it might take some extra time to run everything, but in the instances after you should be good to go.

@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Overview
+This is the OFET UI(User interface), the backend will be in a different branch. So if you want to get the frontend UI code on your computer you can do that by following these steps listed below
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Step 1
+create a directory on your computer and call it OFET_UI. You can create these folder wherever you would like, but I suggest for simplicity sake do it on Desktop. If you are a mac user open iTerm(install iTerm its easier for development sake please), if you are a Windows user install git bash its just easier for development sake, and then run the commands below
+	1. cd into your Desktop -> "mkdir OFET_UI" -> "cd OFET_UI"
 
-## Available Scripts
+# Step 2
+We need to clone this repository so in github 
+	1. click on the "CODE dropdown" at the top
+	2. Make sure it says Local -> HTTPS -> and copy that link
 
-In the project directory, you can run:
+Now we have the github URL link to clone, go back to your iterm or git bash, you should be in OFET_UI right now and just paste the command with the link in there as well in replace of the .....
+	1. "git clone ....."
 
-### `npm start`
+# Step 3
+You have cloned the github repository!(Hopefully) Now from here either do the following to open in VSCode(first make sure you have VSCode downloaded)
+	1. "code ." this automatically opens the code in VSCode
+	2. just go to VSCode and open the folder from VSCode should be simple enough
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Step 4
+The way that react app starts is they have set of instructions inside the package.json file. If you open open the branch of the "OFET Database" folder into the "ofet_project" folder you will see a file called package-lock.json and package.json. These files contain all my package dependencies and my script instructions to run the react application.
+	1. so first cd into ofet_project, we want to be in the same level as the package.json file, this should look something like cd OFETDatabase -> cd ofet_project, to check if you type ls in your iTerm or git Bash you will see package.json listed as one of the files in there
+	2. try running the command "npm start", you will get an error saying react-scripts not found.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Step 5
+This error is because you need to delete the "node_modules" folder(for some people this might not exist already, to check if it exists this folder will be at the same level as public and src), if its there just delete it and run either of the following commands
+	1. npm install --force (should be this one #1)
+	2. npm install --legacy-peer-deps
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Step 6
+now you can run the following command: `npm start` and you will see the React App pop up in google chrome at your local host port
